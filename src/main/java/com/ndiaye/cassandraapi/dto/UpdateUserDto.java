@@ -11,12 +11,8 @@ import javax.validation.constraints.NotEmpty;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateUserDto {
+public class UpdateUserDto {
 
-    @NotEmpty(message = "Should not be empty")
-    private String firstname;
-    @NotEmpty(message = "Should not be empty")
-    private String lastname;
     @NotEmpty(message = "Should not be empty")
     private String email;
     @NotEmpty(message = "Should not be empty")

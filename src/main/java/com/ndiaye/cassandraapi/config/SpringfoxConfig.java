@@ -6,6 +6,8 @@ import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
+import java.util.function.Predicate;
+
 @Configuration
 public class SpringfoxConfig {
 
@@ -14,6 +16,7 @@ public class SpringfoxConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.ndiaye.cassandraapi.controller"))
+                .apis(Predicate.not(RequestHandlerSelectors.basePackage("com.ndiaye.cassandraapi.controller.admin")))
                 .build();
     }
 }
